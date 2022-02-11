@@ -1,0 +1,146 @@
+" easy caps
+nnoremap <c-u> viwU
+inoremap <c-u> <ESC>viwUi
+
+" tabs moves between buffers
+nmap <Tab> :bnext<CR>
+nmap <S-Tab> :bprevious<CR>
+
+" better tabbing
+vnoremap < <gv
+vnoremap > >gv
+
+" shortcutting split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" use alt + hjkl to resize windows
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+
+" Neovim :Terminal
+tmap <Esc> <C-\><C-n>
+tmap <C-w> <Esc><C-w>
+tmap <C-d> <Esc>:q<CR>
+
+" enable tab completion
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" end coc settings
+
+" open horizontal terminal
+nnoremap > <C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>
+
+let mapleader=","
+nmap <leader>r :so ~/.config/nvim/init.vim<CR>
+nmap <leader>ev :e ~/.config/nvim/init.vim<CR>
+
+
+
+" rainbow parentheses mappings
+nmap <leader>h :RainbowParentheses!!<CR>
+
+" fzf mappings
+" s: search for string in dir
+" d: search for file in dir
+" f: search for string in file
+nmap <leader>s :Rg<CR>
+nmap <leader>d :Files<CR>
+nmap <leader>f :BLines<CR>
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'Type'],
+  \ 'border':  ['fg', 'Constant'],
+  \ 'prompt':  ['fg', 'Character'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+" Bat theme for syntax coloring when viewing files in fzf
+let $BAT_THEME='base16'
+
+
+" starts live preview of current latex document
+nmap <leader>lp :LLPStartPreview<CR> 
+
+" shade mappings
+"lua << EOS
+
+"require'shade'.setup({
+  "overlay_opacity = 50,
+  "opacity_step = 1,
+  "keys = {
+    "brightness_up    = '<C-Up>',
+    "brightness_down  = '<C-Down>',
+    "toggle           = '<Leader>h',
+  "}
+"})
+
+"EOS
+
+
+" ultisnips mappings
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBAckwardTrigger="<c-k>"
+" if you want :UltiSnipsEdit to split your window
+let g:UltiSnipsEditSplit="vertical"

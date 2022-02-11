@@ -1,0 +1,12 @@
+
+autoload
+autoload/*
+
+plugged
+plugged/*
+
+sessions
+sessions/*
+
+env
+env/*

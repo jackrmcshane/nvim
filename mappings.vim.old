@@ -1,0 +1,29 @@
+" shortcutting split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+" replace all is aliased to S
+nnoremap <leader>ss :%s//g<Left><Left>
+
+nmap <leader>ev :e ~/.config/nvim/init.vim<CR>
+nmap <leader>eg :e ~/.config/nvim/general.vim<CR>
+nmap <leader>em :e ~/.config/nvim/mappings.vim<CR>
+
+
+" use alt + hjkl to resize windows
+nnoremap <M-j> :resize -2<CR>
+nnoremap <M-k> :resize +2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+
+" easy caps
+inoremap <c-u> <ESC>viwUi
+nnoremap <c-u> viwU
+
+
+let g:UltiSnipsExpandTrigger="<c-c>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBAckwardTrigger="<c-k>"
+" if you want :UltiSnipsEdit to split your window
+let g:UltiSnipsEditSplit="vertical"
