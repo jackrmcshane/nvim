@@ -13,7 +13,8 @@ set hidden " necessary for keeping multiple buffers open at once
 set nowrap " stop text from wrapping to next line
 set lazyredraw " lazy screen re-drawing
 set nohlsearch 
-set pumheight=10
+set pumheight=8
+set signcolumn=yes
 "set showtabline=2
 set conceallevel=0 " allows to see `` in markdown files and such"
 set number relativenumber
