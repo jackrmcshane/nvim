@@ -10,3 +10,9 @@ sessions/*
 
 env
 env/*
+
+old
+old/*
+
+vimscript
+vimscript/*

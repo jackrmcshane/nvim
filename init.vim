@@ -4,9 +4,9 @@ call plug#begin()
 " Aesthetics
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'glepnir/oceanic-material'
 
+Plug 'ryanoasis/vim-devicons'
 
 " Functional Aesthetics
 
@@ -19,3 +19,5 @@ call plug#end()
 
 source $HOME/.config/nvim/general.vim
 source $HOME/.config/nvim/mappings.vim
+
+luafile $HOME/.config/nvim/lua/jack/options.lua
