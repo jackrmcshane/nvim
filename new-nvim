@@ -15,7 +15,7 @@ badd +3 lua/jack/general.lua
 badd +27 lua/jack/tsitter.lua
 badd +13 lua/jack/aesthetics.lua
 badd +40 lua/jack/lspconfig.lua
-badd +0 lua/jack/cmp.lua
+badd +1 lua/jack/cmp.lua
 argglobal
 %argdel
 $argadd eg.init.lua
@@ -31,10 +31,6 @@ vsplit
 2wincmd h
 wincmd w
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 let &splitbelow = s:save_splitbelow
 let &splitright = s:save_splitright
 wincmd t
@@ -46,10 +42,7 @@ set winminwidth=0
 set winwidth=1
 exe 'vert 1resize ' . ((&columns * 63 + 95) / 190)
 exe 'vert 2resize ' . ((&columns * 62 + 95) / 190)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 63 + 95) / 190)
-exe '4resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 63 + 95) / 190)
 argglobal
 balt init.lua
 setlocal fdm=manual
@@ -106,44 +99,17 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
+let s:l = 1 - ((0 * winheight(0) + 23) / 47)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
 keepjumps 1
 normal! 0
 wincmd w
-argglobal
-2argu
-if bufexists("lua/jack/cmp.lua") | buffer lua/jack/cmp.lua | else | edit lua/jack/cmp.lua | endif
-if &buftype ==# 'terminal'
-  silent file lua/jack/cmp.lua
-endif
-balt lua/jack/lspconfig.lua
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-silent! normal! zE
-let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 11) / 23)
-if s:l < 1 | let s:l = 1 | endif
-keepjumps exe s:l
-normal! zt
-keepjumps 1
-normal! 0
-wincmd w
-4wincmd w
+3wincmd w
 exe 'vert 1resize ' . ((&columns * 63 + 95) / 190)
 exe 'vert 2resize ' . ((&columns * 62 + 95) / 190)
-exe '3resize ' . ((&lines * 23 + 24) / 49)
 exe 'vert 3resize ' . ((&columns * 63 + 95) / 190)
-exe '4resize ' . ((&lines * 23 + 24) / 49)
-exe 'vert 4resize ' . ((&columns * 63 + 95) / 190)
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

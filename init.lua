@@ -42,4 +42,6 @@ require('jack/mappings')
 require('jack/aesthetics')
 require('jack/tsitter')
 require('jack/lspconfig')
+require('jack/autocomplete')
+require('jack/luasnip')
 
