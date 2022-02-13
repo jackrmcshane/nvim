@@ -83,6 +83,14 @@ vim.cmd [[
 
 
 vim.cmd [[
+  augroup NvimTerminal
+    autocmd!
+    autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
+]]
+
+
+vim.cmd [[
   augroup CFiles
     autocmd!
     autocmd FileType c setlocal shiftwidth=2 tabstop=2 softtabstop=2
