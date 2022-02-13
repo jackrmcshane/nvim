@@ -33,6 +33,10 @@ require('packer').startup( function()
 
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip' -- Snippets plugin
+
+  -- UI to select things (files, grep results, open buffers...)
+  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 end)
 
 
@@ -44,4 +48,4 @@ require('jack/tsitter')
 require('jack/lspconfig')
 require('jack/autocomplete')
 require('jack/luasnip')
-
+require('jack/tele')
