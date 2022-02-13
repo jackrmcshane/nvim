@@ -1,6 +1,7 @@
 
 --Set colorscheme
 vim.o.termguicolors = true
+vim.o.background = dark
 vim.cmd [[colorscheme onedark]]
 
 --Set statusbar

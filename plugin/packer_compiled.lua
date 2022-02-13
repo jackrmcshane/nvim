@@ -69,6 +69,16 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  Colorizer = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/Colorizer",
+    url = "https://github.com/chrisbra/Colorizer"
+  },
+  ["Comment.nvim"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/Comment.nvim",
+    url = "https://github.com/numToStr/Comment.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/LuaSnip",
@@ -78,6 +88,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/auto-pairs",
     url = "https://github.com/jiangmiao/auto-pairs"
+  },
+  ["bullets.vim"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/bullets.vim",
+    url = "https://github.com/dkarter/bullets.vim"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -139,6 +154,21 @@ _G.packer_plugins = {
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["rainbow_parentheses.vim"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/rainbow_parentheses.vim",
+    url = "https://github.com/junegunn/rainbow_parentheses.vim"
+  },
+  ["shade.nvim"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/shade.nvim",
+    url = "https://github.com/sunjon/shade.nvim"
+  },
+  ["suda.vim"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/suda.vim",
+    url = "https://github.com/lambdalisue/suda.vim"
+  },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
@@ -148,6 +178,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-closetag"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-closetag",
+    url = "https://github.com/alvan/vim-closetag"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -159,10 +194,25 @@ _G.packer_plugins = {
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-gutentags",
     url = "https://github.com/ludovicchabant/vim-gutentags"
   },
+  ["vim-latex-live-preview"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-latex-live-preview",
+    url = "https://github.com/xuhdev/vim-latex-live-preview"
+  },
   ["vim-rhubarb"] = {
     loaded = true,
     path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-rhubarb",
     url = "https://github.com/tpope/vim-rhubarb"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-startify",
+    url = "https://github.com/mhinz/vim-startify"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/asimov/.local/share/nvim/site/pack/packer/start/vim-surround",
+    url = "https://github.com/tpope/vim-surround"
   }
 }
 
