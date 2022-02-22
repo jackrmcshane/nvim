@@ -17,10 +17,6 @@ keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, sil
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
 
--- easy caps
-keymap("n", "<C-u>", "viwU", opts)
-keymap("i", "<C-u>", "<Esc>viwUi", opts)
-
 -- buffer movement
 keymap("n", "<Tab>", ":bnext<CR>", { noremap = true })
 keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true })
