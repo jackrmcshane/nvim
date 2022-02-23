@@ -45,6 +45,9 @@ keymap("t", "<Esc>", "<C-\\><C-n>", opts)
 -- keymap("t", "<C-d>", "<Esc>:q<CR>", opts) -- not working
 
 
+keymap("n", "<leader>conv", ":silent exec \"!convert \"<Left>", { noremap = true })
+
+
 
 -- Diagnostic keymaps
 keymap('n', '<leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
