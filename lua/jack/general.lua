@@ -3,6 +3,7 @@ local options = {
 	-- Set completeopt to have a better completion experience
 	completeopt = { 'menuone', 'noselect' },
 	fileencoding = 'utf-8',
+    pumheight = 10,
 
 	mouse = 'a',
 	wrap = false,
