@@ -22,6 +22,7 @@ require('packer').startup( function()
 
   -- Aesthetics
   use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
+  use 'morhetz/gruvbox'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'sunjon/shade.nvim'
 
