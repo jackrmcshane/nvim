@@ -5,7 +5,6 @@ local options = {
 	fileencoding = 'utf-8',
     pumheight = 10,
 
-	mouse = 'a',
 	wrap = false,
 	hidden = true,
 	number = true,

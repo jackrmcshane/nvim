@@ -21,9 +21,12 @@ require('packer').startup( function()
   use 'wbthomason/packer.nvim' -- Package manager
 
   -- Aesthetics
-  use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'sunjon/shade.nvim'
+
+  -- colorshcemes
+  use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
+  use 'morhetz/gruvbox'
 
   -- Functionality
   use 'jiangmiao/auto-pairs'
