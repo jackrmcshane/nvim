@@ -63,23 +63,26 @@ require('packer').startup( function()
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
+  use 'ThePrimeagen/harpoon'
+
 end)
 
 
 -- import my personal settings at ./lua/jack/*
-require('jack/general')
-require('jack/mappings')
-require('jack/aesthetics')
-require('jack/tsitter')
-require('jack/lspconfig')
-require('jack/autocomplete')
-require('jack/luasnip')
-require('jack/tele')
-require('jack/gitsigns')
-require('jack/commenter')
-require('jack/shadecfg')
-require('jack/startify')
-require('jack/suda')
-require('jack/texviewer')
-require('jack/indent-blankline')
-require('jack/rainbow')
+require('config/general')
+require('config/mappings')
+require('config/aesthetics')
+require('config/tsitter')
+require('config/lspconfig')
+require('config/autocomplete')
+require('config/luasnip')
+require('config/tele')
+require('config/gitsigns')
+require('config/commenter')
+require('config/shadecfg')
+require('config/startify')
+require('config/suda')
+require('config/texviewer')
+require('config/indent-blankline')
+require('config/rainbow')
+require('config/harpoon')

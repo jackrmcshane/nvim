@@ -8,14 +8,31 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- init.lua
-keymap("n", "<leader>r", ":so ~/.config/nvim/init.lua", { noremap = true })
-keymap("n", "<leader>el", ":e ~/.config/nvim/init.lua", opts)
+keymap("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>", { noremap = true })
+keymap("n", "<leader>el", ":e ~/.config/nvim/init.lua<CR>", opts)
 
 
 --Remap for dealing with word wrap
 keymap('n', 'k', "v:count == 0 ? 'gk' : 'k'", { noremap = true, expr = true, silent = true })
 keymap('n', 'j', "v:count == 0 ? 'gj' : 'j'", { noremap = true, expr = true, silent = true })
 
+-- make 'Y' act like the rest of them
+keymap("n", "Y", "y$", opts)
+
+-- keeping n and N (after search) in center of screen and open folds
+-- go to next/prev match, zz, open fold
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
+-- keep cursor in center of screen when concatenating lines
+-- mark current loc as z, concat line, jump back to mark z
+keymap("n", "J", "mzJ'z", opts)
+
+-- better undoing
+keymap("i", ",", ",<C-g>u", opts)
+keymap("i", ".", ".<C-g>u", opts)
+keymap("i", "!", "!<C-g>u", opts)
+keymap("i", "?", "?<C-g>u", opts)
 
 -- buffer movement
 keymap("n", "<Tab>", ":bnext<CR>", { noremap = true })
