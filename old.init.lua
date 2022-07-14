@@ -42,8 +42,6 @@ require('packer').startup( function()
   use 'tpope/vim-rhubarb' -- Fugitive-companion to interact with github
   use 'ludovicchabant/vim-gutentags' -- Automatic tags management
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-  -- Add indentation guides even on blank lines
-  use 'lukas-reineke/indent-blankline.nvim'
   -- Add git related info in the signs columns and popups
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
@@ -83,6 +81,5 @@ require('config/shadecfg')
 require('config/startify')
 require('config/suda')
 require('config/texviewer')
-require('config/indent-blankline')
 require('config/rainbow')
 require('config/harpoon')
