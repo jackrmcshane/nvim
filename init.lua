@@ -24,6 +24,7 @@ require('packer').startup( function()
   use 'mjlbach/onedark.nvim' -- Theme inspired by Atom
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'sunjon/shade.nvim'
+  use 'morhetz/gruvbox'
 
   -- Functionality
   use 'jiangmiao/auto-pairs'
@@ -59,6 +60,9 @@ require('packer').startup( function()
   -- UI to select things (files, grep results, open buffers...)
   use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
+  -- markdown preview
+  use ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)
 
 
@@ -69,6 +73,7 @@ require('jack/aesthetics')
 require('jack/tsitter')
 require('jack/lspconfig')
 require('jack/autocomplete')
+require('jack/cmp')
 require('jack/luasnip')
 require('jack/tele')
 require('jack/gitsigns')
@@ -79,3 +84,4 @@ require('jack/suda')
 require('jack/texviewer')
 require('jack/indent-blankline')
 require('jack/rainbow')
+require('jack/mkdpreview')

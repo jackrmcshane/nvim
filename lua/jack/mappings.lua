@@ -8,8 +8,8 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- init.lua
-keymap("n", "<leader>r", ":so ~/.config/nvim/init.lua", { noremap = true })
-keymap("n", "<leader>el", ":e ~/.config/nvim/init.lua", opts)
+keymap("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>", { noremap = true })
+keymap("n", "<leader>el", ":e ~/.config/nvim/init.lua<CR>", opts)
 
 
 --Remap for dealing with word wrap
