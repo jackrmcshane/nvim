@@ -14,5 +14,7 @@ env/*
 old
 old/*
 
-vimscript
-vimscript/*
+tags
+
+plugin
+plugin/*
