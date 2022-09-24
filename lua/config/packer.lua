@@ -11,17 +11,29 @@ local use = require('packer').use
 require('packer').startup( function()
 
     -- Functionality
-    use { "wbthomason/packer.nvim", opt = true }
+    -- it is recommended to put impatient.nvim before any other plugins
+    use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
+    use { "wbthomason/packer.nvim" }
 
-
-    -- jdhao
     use { "SirVer/ultisnips", event = "InsertEnter" }
     use { "honza/vim-snippets", after = "ultisnips" }
+
+    use { 'jiangmiao/auto-pairs' }
+    use { 'tpope/vim-surround' }
+
+    -- JDHAO
 
     -- Python indent (follows the PEP8 style)
     use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
     -- Python-related text object
     use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
+    -- Stay after pressing * and search selected text
+    use { "haya14busa/vim-asterisk", event = "VimEnter" }
+    -- Highlight URLs inside vim
+    use { "itchyny/vim-highlighturl", event = "VimEnter" }
+    use { 'nvim-lualine/lualine.nvim' } -- Fancier statusline
+
+    use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
 
 
     -- Aesthetics

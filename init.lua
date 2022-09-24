@@ -1,10 +1,13 @@
 
 -- load lua config files
+require('config/packer')
 require('config/options')
 require('config/mappings')
 require('config/autocommands')
-require('config/packer')
 require('config/colorscheme')
+require('config/plugins/lualine')
+require('config/plugins/bufferline')
+
 
 
 -- load vimscript config files

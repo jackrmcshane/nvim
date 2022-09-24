@@ -101,5 +101,5 @@ end
 
 
 -- set colorscheme
-local scheme = 'gruvbox8'
+local scheme = 'gruvbox_material'
 colorscheme.set_colorscheme(scheme)
