@@ -12,7 +12,8 @@ require('config/plugins/bufferline')
 
 -- load vimscript config files
 local vimscript_files = {
-    'snips.vim'
+    'snips.vim',
+    'leaderf.vim'
 }
 
 for _, name in ipairs(vimscript_files) do -- this will also work for .lua files

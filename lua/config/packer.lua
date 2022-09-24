@@ -27,13 +27,13 @@ require('packer').startup( function()
     use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
     -- Python-related text object
     use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
-    -- Stay after pressing * and search selected text
-    use { "haya14busa/vim-asterisk", event = "VimEnter" }
     -- Highlight URLs inside vim
     use { "itchyny/vim-highlighturl", event = "VimEnter" }
     use { 'nvim-lualine/lualine.nvim' } -- Fancier statusline
 
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
+
+    use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
 
 
     -- Aesthetics
