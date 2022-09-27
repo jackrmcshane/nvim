@@ -31,11 +31,11 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
--- window resizing
-keymap("n", "<A-j>", ":resize -2<CR>", opts)
-keymap("n", "<A-k>", ":resize +2<CR>", opts)
-keymap("n", "<A-h>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)
+-- -- window resizing
+-- keymap("n", "<A-j>", ":resize -2<CR>", opts)
+-- keymap("n", "<A-k>", ":resize +2<CR>", opts)
+-- keymap("n", "<A-h>", ":vertical resize -2<CR>", opts)
+-- keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)
 
 
 -- Enable highlighting for lua HERE doc inside vim script
