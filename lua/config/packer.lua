@@ -15,18 +15,13 @@ require('packer').startup( function()
     -- decreases load startup time
     use { "lewis6991/impatient.nvim", config = [[require('impatient')]] }
     use { "wbthomason/packer.nvim" }
-
     -- snippets management
     use { "SirVer/ultisnips", event = "InsertEnter" }
     use { "honza/vim-snippets", after = "ultisnips" }
-
-    -- use { 'jiangmiao/auto-pairs' }
-    use { 'tpope/vim-surround' }
-    -- Comment plugin
-    use { "tpope/vim-commentary", event = "VimEnter" }
-
-
-
+    -- Show undo history visually
+    use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
+    -- fuzzy finder
+    use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
 
     -- completion engine stuff
     use { "onsails/lspkind-nvim", event = "VimEnter" }
@@ -38,106 +33,34 @@ require('packer').startup( function()
     use { "hrsh7th/cmp-buffer", after = "nvim-cmp" }
     use { "hrsh7th/cmp-omni", after = "nvim-cmp" }
     use { "quangnguyen30192/cmp-nvim-ultisnips", after = { "nvim-cmp", "ultisnips" } }
-
-
+    -- completion source for lua language
+    use { "ii14/emmylua-nvim", ft = "lua" }
     -- allows goto def, etc.
     -- nvim-lsp configuration (it relies on cmp-nvim-lsp, so it should be loaded after cmp-nvim-lsp).
     use { "neovim/nvim-lspconfig", after = "cmp-nvim-lsp", config = [[require('config.plugins.lsp')]] }
-
     -- treesitter parser
-    use {
-        "nvim-treesitter/nvim-treesitter",
-        event = "BufEnter",
-        run = ":TSUpdate",
-        config = [[require('config.plugins.treesitter')]],
-    }
+    use { "nvim-treesitter/nvim-treesitter", event = "BufEnter", run = ":TSUpdate", config = [[require('config.plugins.treesitter')]] }
 
-
-
-    -- JDHAO
-    -- Automatic insertion and deletion of a pair of characters
-    use { "Raimondi/delimitMate", event = "InsertEnter" }
-    -- Python indent (follows the PEP8 style)
-    use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
-    -- Python-related text object
-    use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
-    -- Add indent object for vim (useful for languages like Python)
-    use { "michaeljsmith/vim-indent-object", event = "VimEnter" }
-    -- Highlight URLs inside vim
-    use { "itchyny/vim-highlighturl", event = "VimEnter" }
-    -- fuzzy finder
-    use { "Yggdroot/LeaderF", cmd = "Leaderf", run = ":LeaderfInstallCExtension" }
-    -- swap function args with ease
-    use { "machakann/vim-swap", event = "VimEnter" }
-    -- Asynchronous command execution
-    use { "skywind3000/asyncrun.vim", opt = true, cmd = { "AsyncRun" } }
-    -- Handy unix command inside Vim (Rename, Move etc.)
-    use { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
-    -- quick escape with jk
-    use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
-    -- Repeat vim motions
-    use { "tpope/vim-repeat", event = "VimEnter" }
-    -- Plugin to manipulate character pairs quickly
-    use { "machakann/vim-sandwich", event = "VimEnter" }
-    -- Auto format tools
-    use { "sbdchd/neoformat", cmd = { "Neoformat" } }
-    -- Modern matchit implementation
-    use { "andymass/vim-matchup", event = "VimEnter" }
-    -- Autosave files on certain events
-    use { "907th/vim-auto-save", event = "InsertEnter" }
-    -- Show undo history visually
-    use { "simnalamburt/vim-mundo", cmd = { "MundoToggle", "MundoShow" } }
-    -- .tmux.conf syntax highlighting and setting check
-    use { "tmux-plugins/vim-tmux", ft = { "tmux" } }
-    -- Session management plugin
-    use { "tpope/vim-obsession", cmd = "Obsession" }
-    use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
-    -- Another markdown plugin
-    use { "plasticboy/vim-markdown", ft = { "markdown" } }
-    -- Faster footnote generation
-    use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
-    -- Vim tabular plugin for manipulate tabular, required by markdown plugins
-    use { "godlygeek/tabular", cmd = { "Tabularize" } }
-    -- Markdown JSON header highlight plugin
-    use { "elzr/vim-json", ft = { "json", "markdown" } }
-    -- fancy start screen
-    use { "glepnir/dashboard-nvim", event = "VimEnter", config = [[require('config.plugins.dashboard-nvim')]] }
-    -- Debugger plugin
-    use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
-    use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
-    use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.plugins.bqf')]] }
-    use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
     -- Git command inside vim
     use { "tpope/vim-fugitive", event = "User InGitRepo", config = [[require('config.plugins.fugitive')]] }
     -- Better git log display
     use { "rbong/vim-flog", requires = "tpope/vim-fugitive", cmd = { "Flog" } }
-    use { "christoomey/vim-conflicted", requires = "tpope/vim-fugitive", cmd = { "Conflicted" } }
-    -- Show git change (change, delete, add) signs in vim sign column
-    use { "lewis6991/gitsigns.nvim", config = [[require('config.plugins.gitsigns')]] }
-    -- Better git commit experience
-    use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
     -- The missing auto-completion for cmdline!
     use { "gelguy/wilder.nvim", opt = true, setup = [[vim.cmd('packadd wilder.nvim')]] }
-    -- Additional powerful text object for vim, this plugin should be studied
-    -- carefully to use its full power
-    use { "wellle/targets.vim", event = "VimEnter" }
-    -- side viewer for tags and lsp nodes
-    use { "liuchengxu/vista.vim", cmd = "Vista" }
-    -- completion source for lua language
-    use { "ii14/emmylua-nvim", ft = "lua" }
-    use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.plugins.fidget')]] }
-    -- Stay after pressing * and search selected text
-    use { "haya14busa/vim-asterisk", event = "VimEnter" }
-    use { 'chrisbra/unicode.vim' }
-    -- highlighting for matching keywords
-    -- Show match number and index for searching
-    use {
-      "kevinhwang91/nvim-hlslens",
-      branch = "main",
-      keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
-      config = [[require('config.plugins.hlslens')]],
-    }
-
+    -- akin to auto-pairs but better
+    use { "Raimondi/delimitMate", event = "InsertEnter" }
+    -- use { 'jiangmiao/auto-pairs' }
+    -- use { 'tpope/vim-surround' }
+    -- Plugin to manipulate character pairs quickly (alternative to vim-surround)
+    use { "machakann/vim-sandwich", event = "VimEnter" }
+    -- Comment plugin
+    use { "tpope/vim-commentary", event = "VimEnter" }
+    -- swap function args with ease
+    use { "machakann/vim-swap", event = "VimEnter" }
+    -- Repeat vim motions
+    use { "tpope/vim-repeat", event = "VimEnter" }
+    -- .tmux.conf syntax highlighting and setting check
+    use { "tmux-plugins/vim-tmux", ft = { "tmux" } }
     -- Super fast buffer jump
     use {
       "phaazon/hop.nvim",
@@ -149,52 +72,22 @@ require('packer').startup( function()
       end,
     }
 
-    -- showing keybindings
-    use {
-      "folke/which-key.nvim",
-      event = "VimEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.plugins.which-key")
-        end, 2000)
-      end,
-    }
-
+    -- Asynchronous command execution
+    use { "skywind3000/asyncrun.vim", opt = true, cmd = { "AsyncRun" } }
+    -- Auto format tools
+    use { "sbdchd/neoformat", cmd = { "Neoformat" } }
+    -- side viewer for tags and lsp nodes (vista)
+    use { "kyazdani42/nvim-web-devicons", event = "VimEnter" }
+    use { "liuchengxu/vista.vim", cmd = "Vista" }
     -- file explorer
-    use {
-      "kyazdani42/nvim-tree.lua",
-      requires = { "kyazdani42/nvim-web-devicons" },
-      config = [[require('config.plugins.nvim-tree')]],
-    }
-
-    use {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "VimEnter",
-      config = [[require('config.plugins.indent-blankline')]],
-    }
-
-    -- Smoothie motions
-    use {
-      "karb94/neoscroll.nvim",
-      event = "VimEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.plugins.neoscroll")
-        end, 2000)
-      end,
-    }
-
-    -- notification plugin
-    use {
-      "rcarriga/nvim-notify",
-      event = "BufEnter",
-      config = function()
-        vim.defer_fn(function()
-          require("config.plugins.notify")
-        end, 2000)
-      end,
-    }
-
+    use { "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" }, config = [[require('config.plugins.nvim-tree')]] }
+    -- quick escape with jk (necessary with the autocomplete)
+    use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
+    -- Additional powerful text object for vim, this plugin should be studied
+    -- carefully to use its full power
+    use { "wellle/targets.vim", event = "VimEnter" }
+    -- Autosave files on certain events
+    use { "907th/vim-auto-save", event = "InsertEnter" }
 
 
 
@@ -202,6 +95,12 @@ require('packer').startup( function()
     -- Aesthetics
     use { 'nvim-lualine/lualine.nvim' } -- Fancier statusline
     use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
+    -- fancy start screen
+    use { "glepnir/dashboard-nvim", event = "VimEnter", config = [[require('config.plugins.dashboard-nvim')]] }
+    -- Show git change (change, delete, add) signs in vim sign column
+    use { "lewis6991/gitsigns.nvim", config = [[require('config.plugins.gitsigns')]] }
+    -- Highlight URLs inside vim
+    use { "itchyny/vim-highlighturl", event = "VimEnter" }
 
     use { "lifepillar/vim-gruvbox8", opt = true }
     use { "navarasu/onedark.nvim", opt = true }
@@ -213,5 +112,103 @@ require('packer').startup( function()
     use { "EdenEast/nightfox.nvim", opt = true }
     use { "rebelot/kanagawa.nvim", opt = true }
     use { "catppuccin/nvim", as = "catppuccin", opt = true }
+
+
+
+
+
+
+
+    -- JDHAO
+    -- python plugins
+    -- Python indent (follows the PEP8 style)
+    -- use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
+    -- Python-related text object
+    -- use { "jeetsukumaran/vim-pythonsense", ft = { "python" } }
+    -- Add indent object for vim (useful for languages like Python)
+    -- use { "michaeljsmith/vim-indent-object", event = "VimEnter" }
+
+    -- Handy unix command inside Vim (Rename, Move etc.)
+    -- use { "tpope/vim-eunuch", cmd = { "Rename", "Delete" } }
+    -- extends the vim % operator for matching syntax
+    -- use { "andymass/vim-matchup", event = "VimEnter" }
+    -- Session management plugin
+    -- use { "tpope/vim-obsession", cmd = "Obsession" }
+
+    -- Another markdown plugin
+    -- use { "plasticboy/vim-markdown", ft = { "markdown" } }
+    -- Faster footnote generation
+    -- use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
+    -- Vim tabular plugin for manipulate tabular, required by markdown plugins
+    -- use { "godlygeek/tabular", cmd = { "Tabularize" } }
+    -- Markdown JSON header highlight plugin
+    -- use { "elzr/vim-json", ft = { "json", "markdown" } }
+
+    -- Debugger plugin
+    -- use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
+    -- use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
+    -- use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.plugins.bqf')]] }
+    -- use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
+
+    -- more git plugins
+    -- use { "christoomey/vim-conflicted", requires = "tpope/vim-fugitive", cmd = { "Conflicted" } }
+    -- Better git commit experience
+    -- use { "rhysd/committia.vim", opt = true, setup = [[vim.cmd('packadd committia.vim')]] }
+
+
+    -- use { "j-hui/fidget.nvim", after = "nvim-lspconfig", config = [[require('config.plugins.fidget')]] }
+
+    -- Stay after pressing * and search selected text
+    use { "haya14busa/vim-asterisk", event = "VimEnter" }
+    -- use { 'chrisbra/unicode.vim' }
+    -- highlighting for matching keywords
+    -- Show match number and index for searching
+    use {
+      "kevinhwang91/nvim-hlslens",
+      branch = "main",
+      keys = { { "n", "*" }, { "n", "#" }, { "n", "n" }, { "n", "N" } },
+      config = [[require('config.plugins.hlslens')]],
+    }
+
+
+    -- -- showing keybindings
+    -- use {
+    --   "folke/which-key.nvim",
+    --   event = "VimEnter",
+    --   config = function()
+    --     vim.defer_fn(function()
+    --       require("config.plugins.which-key")
+    --     end, 2000)
+    --   end,
+    -- }
+
+
+    -- use {
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   event = "VimEnter",
+    --   config = [[require('config.plugins.indent-blankline')]],
+    -- }
+
+    -- -- Smoothie motions
+    -- use {
+    --   "karb94/neoscroll.nvim",
+    --   event = "VimEnter",
+    --   config = function()
+    --     vim.defer_fn(function()
+    --       require("config.plugins.neoscroll")
+    --     end, 2000)
+    --   end,
+    -- }
+
+    -- -- notification plugin
+    -- use {
+    --   "rcarriga/nvim-notify",
+    --   event = "BufEnter",
+    --   config = function()
+    --     vim.defer_fn(function()
+    --       require("config.plugins.notify")
+    --     end, 2000)
+    --   end,
+    -- }
 
 end)

@@ -10,7 +10,6 @@ require('config/plugins/bufferline')
 
 -- load jdhao config files
 local jdhao_conf_files = {
-    'globals.lua',
     'options.vim',
     'mappings.lua',
     'autocommands.vim',
@@ -19,15 +18,15 @@ local jdhao_conf_files = {
     'mundo.vim',
     'better-escape.vim',
     'neoformat.vim',
-    'vim-markdown.vim',
+    -- 'vim-markdown.vim',
     'sandwich.vim',
-    'matchup.vim',
+    -- 'matchup.vim',
     'asyncrun.vim',
-    'gdb.vim',
+    -- 'gdb.vim',
     'wilder.vim',
     'autosave.vim',
     'vista.vim',
-    'unicode.vim'
+    -- 'unicode.vim'
 }
 
 for _, name in ipairs(jdhao_conf_files) do
