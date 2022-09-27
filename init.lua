@@ -8,26 +8,26 @@ require('config/colorscheme')
 require('config/plugins/lualine')
 require('config/plugins/bufferline')
 
-
-
--- load vimscript config files
-local vimscript_files = {
-    'snips.vim',
-    'leaderf.vim'
-}
-
-for _, name in ipairs(vimscript_files) do -- this will also work for .lua files
-    local path = string.format("%s/vimscript/%s", vim.fn.stdpath("config"), name)
-    local source_cmd = "source " .. path
-    vim.cmd(source_cmd)
-end
-
-
-
 -- load jdhao config files
 local jdhao_conf_files = {
+    'globals.lua',
     'options.vim',
-    'mappings.lua'
+    'mappings.lua',
+    'autocommands.vim',
+    'snips.vim',
+    'leaderf.vim',
+    'mundo.vim',
+    'better-escape.vim',
+    'neoformat.vim',
+    'vim-markdown.vim',
+    'sandwich.vim',
+    'matchup.vim',
+    'asyncrun.vim',
+    'gdb.vim',
+    'wilder.vim',
+    'autosave.vim',
+    'vista.vim',
+    'unicode.vim'
 }
 
 for _, name in ipairs(jdhao_conf_files) do
@@ -35,3 +35,4 @@ for _, name in ipairs(jdhao_conf_files) do
     local source_cmd = "source" .. path
     vim.cmd(source_cmd)
 end
+

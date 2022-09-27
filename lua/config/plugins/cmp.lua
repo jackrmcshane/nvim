@@ -1,5 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup {
   snippet = {
@@ -35,6 +36,7 @@ cmp.setup {
     { name = "path" }, -- for path completion
     { name = "buffer", keyword_length = 2 }, -- for buffer word completion
     { name = "omni" },
+    -- { name = "emoji", insert = true }, -- emoji completion
   },
   completion = {
     keyword_length = 1,
@@ -42,6 +44,20 @@ cmp.setup {
   },
   view = {
     entries = "custom",
+  },
+  formatting = {
+    format = lspkind.cmp_format {
+      mode = "symbol_text",
+      menu = {
+        nvim_lsp = "[LSP]",
+        ultisnips = "[US]",
+        nvim_lua = "[Lua]",
+        path = "[Path]",
+        buffer = "[Buffer]",
+        -- emoji = "[Emoji]",
+        omni = "[Omni]",
+      },
+    },
   },
 }
 

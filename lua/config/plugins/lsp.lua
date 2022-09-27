@@ -3,7 +3,13 @@ local api = vim.api
 local keymap = vim.keymap
 local lsp = vim.lsp
 
-local utils = require("utils")
+local utils = {}
+utils.executable = function(name)
+    if fn.executable(name) > 0 then
+        return true
+    end
+    return false
+end
 
 local custom_attach = function(client, bufnr)
   -- Mappings.

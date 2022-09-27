@@ -55,7 +55,7 @@ nnoremap <silent> <leader>ff :<C-U>Leaderf file --popup<CR>
 nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>
 
 " Search vim help files
-nnoremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
+noremap <silent> <leader>fh :<C-U>Leaderf help --popup<CR>
 
 " Search tags in current buffer
 nnoremap <silent> <leader>ft :<C-U>Leaderf bufTag --popup<CR>

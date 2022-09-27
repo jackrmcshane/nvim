@@ -9,6 +9,8 @@ km({ "n", "x" }, "L", "g_")
 keymap("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
 keymap("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
 
+-- Save key strokes (now we do not need to press shift to enter command mode).
+km({ "n", "x" }, ";", ":")
 
 -- Insert a blank line below or above current line (do not move the cursor),
 -- see https://stackoverflow.com/a/16136133/6064933
@@ -60,3 +62,60 @@ km("i", "<A-;>", "<Esc>miA;<Esc>`ii")
 -- Go to the beginning and end of current line in insert mode quickly
 km("i", "<C-A>", "<HOME>")
 km("i", "<C-E>", "<END>")
+
+-- Toggle cursor column
+km("n", "<leader>cl", "<cmd>call utils#ToggleCursorCol()<cr>", { desc = "toggle cursor column" })
+
+-- Move current line up and down
+km("n", "<A-k>", '<cmd>call utils#SwitchLine(line("."), "up")<cr>', { desc = "move line up" })
+km("n", "<A-j>", '<cmd>call utils#SwitchLine(line("."), "down")<cr>', { desc = "move line down" })
+
+-- Move current visual-line selection up and down
+km("x", "<A-k>", '<cmd>call utils#MoveSelection("up")<cr>', { desc = "move selection up" })
+
+km("x", "<A-j>", '<cmd>call utils#MoveSelection("down")<cr>', { desc = "move selection down" })
+
+-- Replace visual selection with text in register, but not contaminate the register,
+-- see also https://stackoverflow.com/q/10723700/6064933.
+km("x", "p", '"_c<Esc>p')
+
+-- Go to a certain buffer
+km("n", "gb", '<cmd>call buf_utils#GoToBuffer(v:count, "forward")<cr>', {
+  desc = "go to buffer (forward)",
+})
+km("n", "gB", '<cmd>call buf_utils#GoToBuffer(v:count, "backward")<cr>', {
+  desc = "go to buffer (backward)",
+})
+
+
+-- Switch windows positions
+km("n", "<left>", "<c-w>h")
+km("n", "<Right>", "<C-W>l")
+km("n", "<Up>", "<C-W>k")
+km("n", "<Down>", "<C-W>j")
+
+-- Reselect the text that has just been pasted, see also https://stackoverflow.com/a/4317090/6064933.
+km("n", "<leader>v", "printf('`[%s`]', getregtype()[0])", {
+  expr = true,
+  desc = "reselect last pasted area",
+})
+
+-- Change text without putting it into the vim register,
+-- see https://stackoverflow.com/q/54255/6064933
+km("n", "c", '"_c')
+km("n", "C", '"_C')
+km("n", "cc", '"_cc')
+km("x", "c", '"_c')
+
+-- Replace visual selection with text in register, but not contaminate the register,
+-- see also https://stackoverflow.com/q/10723700/6064933.
+km("x", "p", '"_c<Esc>p')
+
+-- Break inserted text into smaller undo units when we insert some punctuation chars.
+local undo_ch = { ",", ".", "!", "?", ";", ":" }
+for _, ch in ipairs(undo_ch) do
+  km("i", ch, ch .. "<c-g>u")
+end
+
+-- Keep cursor position after yanking
+km("n", "y", "myy")

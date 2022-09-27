@@ -4,10 +4,6 @@ local keymap = vim.api.nvim_set_keymap
 local km = vim.keymap.set
 
 
--- remap ',' to leader key
-vim.g.mapleader = ','
-vim.g.localleader = ','
-
 -- init.lua
 keymap("n", "<leader>r", ":so ~/.config/nvim/init.lua<CR>", { noremap = true })
 keymap("n", "<leader>e", ":e ~/.config/nvim/init.lua<CR>", opts)
@@ -19,6 +15,9 @@ keymap("i", "<C-u>", "<Esc>viwUi", opts)
 -- buffer movement
 keymap("n", "<Tab>", ":bnext<CR>", { noremap = true })
 keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true })
+
+-- close buffer without closing window
+keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- better tabbing
 keymap("v", "<", "<gv", opts)
