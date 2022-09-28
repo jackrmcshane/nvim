@@ -18,14 +18,14 @@ local jdhao_conf_files = {
     'mundo.vim',
     'better-escape.vim',
     'neoformat.vim',
-    -- 'vim-markdown.vim',
     'sandwich.vim',
-    -- 'matchup.vim',
     'asyncrun.vim',
     -- 'gdb.vim',
     'wilder.vim',
     'autosave.vim',
     'vista.vim',
+    -- 'matchup.vim',
+    -- 'vim-markdown.vim',
     -- 'unicode.vim'
 }
 
