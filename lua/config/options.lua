@@ -43,9 +43,8 @@ local options = {
     foldenable = false, -- for now bc i dont remember the binds
     foldminlines = 4,
     foldnestmax = 10,
-    foldmethod = 'indent',
-    --foldmethod = 'expr',
-    --foldexpr = 'nvim_treesitter#foldexpr()',
+    foldmethod = 'expr',
+    foldexpr = 'nvim_treesitter#foldexpr()',
 
 }
 

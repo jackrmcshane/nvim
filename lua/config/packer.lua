@@ -88,6 +88,8 @@ require('packer').startup( function()
     use { "wellle/targets.vim", event = "VimEnter" }
     -- Autosave files on certain events
     use { "907th/vim-auto-save", event = "InsertEnter" }
+    -- sort python import statements alphabetically
+    use { 'fisadev/vim-isort' }
 
 
 
@@ -120,7 +122,18 @@ require('packer').startup( function()
 
 
     -- JDHAO
+    -- have to figure out a keymapping or autodetect based on dir to have this work quickly
+    -- use { 'junegunn/vim-journal' }
+    -- use { 'junegunn/rainbow_parentheses.vim' }
+    -- use { 'junegunn/vim-easy-align' }
+    use { 'metakirby5/codi.vim' }
+    -- interacting with tmux from vim
+    -- use { 'preservim/vimux' }
     -- python plugins
+    -- interactive python shell opens in vim
+    -- use { 'greghor/vim-pyShell' }
+    -- allows you to send chunks of code to pyshell w/ keybinds
+    -- use { 'julienr/vim-cellmode' }
     -- Python indent (follows the PEP8 style)
     -- use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
     -- Python-related text object
@@ -143,10 +156,17 @@ require('packer').startup( function()
     -- use { "godlygeek/tabular", cmd = { "Tabularize" } }
     -- Markdown JSON header highlight plugin
     -- use { "elzr/vim-json", ft = { "json", "markdown" } }
+    -- use { 'iamcco/markdown-preview.nvim', run = function() vim.fn['mkdp#util#install']() end }
+
+
+    -- LaTex plugins
+    -- use { 'vim-latex/vim-latex' }
+    -- use { 'lervag/vimtex' }
+    -- use { 'Chiel92/vim-autoformat' }
 
     -- Debugger plugin
     -- use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
-    -- use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
+    use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
     -- use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.plugins.bqf')]] }
     -- use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
 

@@ -1,5 +1,9 @@
 scriptencoding utf-8
 
+
+" enables gf mapping
+set path=~/.config/nvim/*
+
 " change fillchars for folding, vertical split, end of buffer, and message separator
 set fillchars=fold:\ ,vert:\│,eob:\ ,msgsep:‾
 
@@ -68,6 +72,7 @@ set visualbell noerrorbells  " Do not use visual and errorbells
 set history=500  " The number of command and search history to keep
 
 " Use list mode and customized listchars
+" set list listchars=trail:»,tab:»-
 set list listchars=tab:▸\ ,extends:❯,precedes:❮,nbsp:␣
 
 " Auto-write the file based on some condition
@@ -158,3 +163,7 @@ set diffopt+=internal,indent-heuristic,algorithm:histogram
 
 set nowrap  " turn of line wrap
 set noruler
+
+
+" isort visual selection mapping
+let g:vim_isort_map = '<C-i>'
