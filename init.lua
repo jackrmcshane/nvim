@@ -20,10 +20,10 @@ local jdhao_conf_files = {
     'neoformat.vim',
     'sandwich.vim',
     'asyncrun.vim',
-    -- 'gdb.vim',
     'wilder.vim',
     'autosave.vim',
     'vista.vim',
+    -- 'gdb.vim',
     -- 'matchup.vim',
     -- 'vim-markdown.vim',
     -- 'unicode.vim'

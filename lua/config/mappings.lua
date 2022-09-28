@@ -19,7 +19,7 @@ keymap("n", "<Tab>", ":bnext<CR>", { noremap = true })
 keymap("n", "<S-Tab>", ":bprevious<CR>", { noremap = true })
 
 -- close buffer without closing window
-keymap("n", "<leader>c", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
+keymap("n", "<leader>x", ":bp<bar>sp<bar>bn<bar>bd<CR>", opts)
 
 -- better tabbing
 keymap("v", "<", "<gv", opts)
