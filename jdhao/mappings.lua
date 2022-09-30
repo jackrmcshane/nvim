@@ -5,15 +5,13 @@ local keymap = vim.api.nvim_set_keymap
 km({ "n", "x" }, "H", "^")
 km({ "n", "x" }, "L", "g_")
 
--- Save key strokes (now we do not need to press shift to enter command mode).
-km({ "n", "x" }, ";", ":")
 
 -- Always use very magic mode for searching
 km("n", "/", [[/\v]])
 
 -- Paste non-linewise text above or below current line, see https://stackoverflow.com/a/1346777/6064933
-keymap("n", "<leader>p", "m`o<ESC>p``", { desc = "paste below current line" })
-keymap("n", "<leader>P", "m`O<ESC>p``", { desc = "paste above current line" })
+keymap("n", "<space>p", "m`o<ESC>p``", { desc = "paste below current line" })
+keymap("n", "<space>P", "m`O<ESC>p``", { desc = "paste above current line" })
 -- Insert a blank line below or above current line (do not move the cursor),
 -- see https://stackoverflow.com/a/16136133/6064933
 keymap("n", "<space>o", "printf('m`%so<ESC>``', v:count1)", { expr = true, desc = "insert line below", })

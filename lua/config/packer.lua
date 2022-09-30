@@ -53,6 +53,7 @@ require('packer').startup( function()
     -- use { 'tpope/vim-surround' }
     -- Plugin to manipulate character pairs quickly (alternative to vim-surround)
     use { "machakann/vim-sandwich", event = "VimEnter" }
+    use { 'ThePrimeagen/harpoon', requires = 'nvim-lua/plenary.nvim' }
     -- Comment plugin
     use { "tpope/vim-commentary", event = "VimEnter" }
     -- swap function args with ease
@@ -122,6 +123,7 @@ require('packer').startup( function()
 
 
     -- JDHAO
+    -- use { 'nvim-lua/plenary.nvim' } -- required by harpon
     -- have to figure out a keymapping or autodetect based on dir to have this work quickly
     -- use { 'junegunn/vim-journal' }
     -- use { 'junegunn/rainbow_parentheses.vim' }

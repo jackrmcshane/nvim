@@ -38,6 +38,14 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)
 
 
+-- harpoon mappings
+km('n', "<leader>a", ":lua require('harpoon.mark').add_file()<CR>", { noremap = true })
+km('n', "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>")
+km('n', "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>")
+km('n', "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>")
+km('n', "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>")
+km('n', "<leader>o", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
+
 -- Enable highlighting for lua HERE doc inside vim script
 vim.g.vimsyn_embed = 'l'
 
