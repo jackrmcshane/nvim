@@ -56,4 +56,4 @@ vim.cmd [[
   augroup end
 ]]
 
-vim.cmd [[ :echom "<(\"<) <('')> (>\")>" ]]
+vim.cmd [[ echom "<(\"<) <('')> (>\")>" ]]

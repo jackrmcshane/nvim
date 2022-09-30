@@ -49,7 +49,7 @@ let g:Lf_ShortcutB = ''
 let g:Lf_WorkingDirectoryMode = 'a'
 
 " Search files in popup window
-nnoremap <silent> <leader>ff :<C-U>Leaderf file --popup<CR>
+nnoremap <silent> <leader>ff :<C-U>Leaderf file --bottom<CR>
 
 " Grep project files in popup window
 nnoremap <silent> <leader>fg :<C-U>Leaderf rg --no-messages --popup<CR>

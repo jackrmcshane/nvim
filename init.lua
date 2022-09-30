@@ -7,6 +7,7 @@ require('config/autocommands')
 require('config/colorscheme')
 require('config/plugins/lualine')
 require('config/plugins/bufferline')
+-- require('config/plugins/shade')
 
 -- load jdhao config files
 local jdhao_conf_files = {

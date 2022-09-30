@@ -2,6 +2,9 @@
 " " more easy align mappings
 " xmap <leader>a gaip*
 " nmap <leader>a gaip*
+" EasyAlign
+" xmap ga <Plug>(EasyAlign)
+" nmap ga <Plug>(EasyAlign)
 
 " " terminal mode mappings (need to change)
 " nmap <leader>s <C-w>s<C-w>j:terminal<CR>
@@ -33,3 +36,13 @@
 
 " Perform dot commands over visual blocks:
 	" vnoremap . :normal .<CR>
+
+" have to alter these mappings
+" nmap <leader>> <C-w>s<C-w>j:terminal<CR>:set nonumber<CR><S-a>
+" nmap <leader>>> <C-w>v<C-w>l:terminal<CR>:set nonumber<CR><S-a>
+
+" replace all is aliased to S
+nnoremap <leader>ss :%s//g<Left><Left>
+
+"perform dot commands over visual blocks
+vnoremap . :normal .<CR>

@@ -126,7 +126,8 @@ require('packer').startup( function()
     -- use { 'junegunn/vim-journal' }
     -- use { 'junegunn/rainbow_parentheses.vim' }
     -- use { 'junegunn/vim-easy-align' }
-    use { 'metakirby5/codi.vim' }
+    -- use { 'metakirby5/codi.vim' }
+    -- use 'junegunn/rainbow_parentheses.vim'
     -- interacting with tmux from vim
     -- use { 'preservim/vimux' }
     -- python plugins
@@ -163,10 +164,14 @@ require('packer').startup( function()
     -- use { 'vim-latex/vim-latex' }
     -- use { 'lervag/vimtex' }
     -- use { 'Chiel92/vim-autoformat' }
+    -- use { 'xuhdev/vim-latex-live-preview' }
 
     -- Debugger plugin
     -- use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
     use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
+    -- alternative to zenmode
+    -- use { 'junegunn/goyo.vim' }
+    -- use { 'junegunn/limelight.vim' }
     -- use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.plugins.bqf')]] }
     -- use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
 
@@ -190,8 +195,16 @@ require('packer').startup( function()
       config = [[require('config.plugins.hlslens')]],
     }
 
+    -- use 'junegunn/rainbow_parentheses.vim'
+    -- use 'ludovicchabant/vim-gutentags'
+    -- use 'sunjon/shade.nvim'
+    -- use 'lambdalisue/suda.vim'
+    -- colors background of colorcodes
+    -- use 'chrisbra/Colorizer'
+    -- markdown preview
+    -- use ({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
-    -- -- showing keybindings
+    -- -- shows keybindings
     -- use {
     --   "folke/which-key.nvim",
     --   event = "VimEnter",

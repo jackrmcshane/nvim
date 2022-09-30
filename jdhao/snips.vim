@@ -5,6 +5,8 @@ let g:UltiSnipsExpandTrigger='<C-Space>'
 
 " Do not look for SnipMate snippets
 let g:UltiSnipsEnableSnipMate = 0
+" if you want :UltiSnipsEdit to split your window
+let g:UltiSnipsEditSplit="vertical"
 
 " Shortcut to jump forward and backward in tabstop positions
 let g:UltiSnipsJumpForwardTrigger='<C-n>'
