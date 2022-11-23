@@ -28,7 +28,7 @@ local jdhao_conf_files = {
     -- 'codi.vim',
     -- 'gdb.vim',
     -- 'matchup.vim',
-    -- 'vim-markdown.vim',
+    'vim-markdown.vim',
     -- 'unicode.vim'
 }
 

@@ -151,15 +151,19 @@ require('packer').startup( function()
     -- Session management plugin
     -- use { "tpope/vim-obsession", cmd = "Obsession" }
 
-    -- Another markdown plugin
-    -- use { "plasticboy/vim-markdown", ft = { "markdown" } }
+    -- markdown functionality
+    use { 'iamcco/markdown-preview.nvim', run = function() vim.fn['mkdp#util#install']() end }
+    -- alternative to zenmode
+    use { 'junegunn/goyo.vim' }
+    use { 'junegunn/limelight.vim' }
+    use { "plasticboy/vim-markdown", ft = { "markdown" } }
+    use { 'vim-pandoc/vim-pandoc-syntax' }
     -- Faster footnote generation
     -- use { "vim-pandoc/vim-markdownfootnotes", ft = { "markdown" } }
     -- Vim tabular plugin for manipulate tabular, required by markdown plugins
     -- use { "godlygeek/tabular", cmd = { "Tabularize" } }
     -- Markdown JSON header highlight plugin
     -- use { "elzr/vim-json", ft = { "json", "markdown" } }
-    -- use { 'iamcco/markdown-preview.nvim', run = function() vim.fn['mkdp#util#install']() end }
 
 
     -- LaTex plugins
@@ -170,10 +174,7 @@ require('packer').startup( function()
 
     -- Debugger plugin
     -- use { "sakhnik/nvim-gdb", run = { "bash install.sh" }, opt = true, setup = [[vim.cmd('packadd nvim-gdb')]] }
-    use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
-    -- alternative to zenmode
-    -- use { 'junegunn/goyo.vim' }
-    -- use { 'junegunn/limelight.vim' }
+    -- use { "folke/zen-mode.nvim", cmd = "ZenMode", config = [[require('config.plugins.zen-mode')]] }
     -- use { "kevinhwang91/nvim-bqf", ft = "qf", config = [[require('config.plugins.bqf')]] }
     -- use { "ojroques/vim-oscyank", cmd = { "OSCYank", "OSCYankReg" } }
 
