@@ -6,3 +6,8 @@ require("nvim-treesitter.configs").setup {
     disable = {}, -- list of language that will be disabled
   },
 }
+
+
+
+-- stops whole line highlight while typing
+vim.treesitter.highlighter.hl_map.error = nil
